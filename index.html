@@ -158,6 +158,7 @@
   <footer class="text-center">
     <div class="container">
       <p>© 2025 Track AI Foundation. All Rights Reserved.</p>
+      <p id="visit-count">Visitors: Loading...</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms</a>
@@ -165,6 +166,20 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  // Replace 'trackai.org' with your own domain if you want custom tracking
+  fetch('https://api.countapi.xyz/update/trackai.org/homepage/?amount=1')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('visit-count').innerText = `Visitors: ${data.value}`;
+    })
+    .catch(err => {
+      document.getElementById('visit-count').innerText = 'Visitors: N/A';
+      console.error('Visit counter error:', err);
+    });
+</script>
+
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
