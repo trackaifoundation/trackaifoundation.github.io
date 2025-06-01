@@ -169,7 +169,7 @@
 
   <script>
   // Replace 'trackai.org' with your own domain if you want custom tracking
-  fetch('https://api.countapi.xyz/update/trackaifoundation.github.io/homepage/?amount=1')
+  fetch('https://api.countapi.xyz/update/trackaifoundation.github.io/index/?amount=1')
     .then(res => res.json())
     .then(data => {
       document.getElementById('visit-count').innerText = `Visitors: ${data.value}`;
