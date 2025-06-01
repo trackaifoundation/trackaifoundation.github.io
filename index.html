@@ -172,17 +172,20 @@
   </footer>
 
   <script>
-  // Replace 'trackai.org' with your own domain if you want custom tracking
-  fetch('https://api.countapi.xyz/update/trackaifoundation.github.io/?amount=1')
+  // Visit counter using CountAPI
+  const counterElement = document.getElementById('visit-count');
+
+  fetch('https://api.countapi.xyz/update/trackaifoundation.github.io/visits/?amount=1')
     .then(res => res.json())
     .then(data => {
-      document.getElementById('visit-count').innerText = `Visitors: ${data.value}`;
+      counterElement.innerText = `Visitors: ${data.value}`;
     })
-    .catch(err => {
-      document.getElementById('visit-count').innerText = 'Visitors: N/A';
-      console.error('Visit counter error:', err);
+    .catch(error => {
+      console.error('Counter error:', error);
+      counterElement.innerText = 'Visitors: N/A';
     });
 </script>
+
 
 
   <!-- Scripts -->
